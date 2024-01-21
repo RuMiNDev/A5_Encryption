@@ -1,12 +1,10 @@
 import json
 
-result_text = ''
-chr = ''
 
-user_select = int(input('1.encode 2.decode 3.exit : '))
-if user_select == 1:
-    user_input = str(input('TEXT : '))
-
+def encrypt(user_input):
+    if not user_input:
+        raise 'no rrt'
+    result_text = ''
     with open('./data/encryption_data.json', 'r') as f:
         translation_data = json.load(f)
 
@@ -16,10 +14,11 @@ if user_select == 1:
         else:
             result_text += str(texts)
 
-    print(f'encoded_text : {result_text}')
+    return result_text
 
-elif user_select == 2:
-    user_input = input('ENCODED STRING : ')
+def decrypt(user_input):
+    chr = ''
+    result_text = ''
 
     with open('./data/decode_data.json', 'r') as f:
         decode_translation_data = json.load(f)
@@ -33,4 +32,5 @@ elif user_select == 2:
         elif not str(texts) in decode_translation_data:
             result_text += texts
 
-    print(f'decoded text : {result_text}')
+    return result_text
+
