@@ -7,7 +7,7 @@ user_select = int(input('1.encode 2.decode 3.exit : '))
 if user_select == 1:
     user_input = str(input('TEXT : '))
 
-    with open('./data/translate_datas.json', 'r') as f:
+    with open('./data/encryption_data.json', 'r') as f:
         translation_data = json.load(f)
 
     for texts in user_input:
