@@ -2,8 +2,6 @@ import json
 
 
 def encrypt(user_input):
-    if not user_input:
-        raise 'no rrt'
     result_text = ''
     with open('./data/encryption_data.json', 'r') as f:
         translation_data = json.load(f)
