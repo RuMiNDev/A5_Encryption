@@ -6,7 +6,7 @@ A5 Encryption made by rumindev
 ```py
 import a5_encryption as ae
 
-user_input = str('text: ')
+user_input = input(str('text: '))
 result = ae.encrypt(user_input)
 print(f'result : {result}')
 ```
